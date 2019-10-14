@@ -22,13 +22,13 @@ class Lifter
     memberships.map {|membership| membership.gym} 
   end
 
-  def self.average_lift_total #getting method error for this
+  def self.average_lift_total 
     sum = all.reduce(0) {|sum, lifter| sum + lifter.lift_total}
     sum / all.length
   end
 
   def total_cost
-    memberships.reduce(0) {|sum, membership| sum + membership.cost} #getting method error for this
+    memberships.reduce {|sum, membership| sum + membership.cost} 
   end
 
   def signup(gym, cost)
